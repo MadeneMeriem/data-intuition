@@ -1,38 +1,201 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+* {
+  margin:0 ;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background-color: #FCFEFF;
+    max-width: 100%;
+    overflow-x: hidden;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav{
+    display : flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    gap: 24px;
+    margin-left: 30px;
+    margin-right: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: transparent;
+}
+.nav-bar-container{
+    display: none;
+}
+.nav-links{
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+}
+.nav-links  a{
+    text-decoration: none;
+    color: #000;
+    font-size: 1.1rem;
+
+}
+.data-intuition-logo {
+    width: 150px;
+    height: 50px;
+    display: flex;
+    padding: 1rem 2rem;
+    margin-top: 4rem;
+}
+.contact-button button {
+    background-color: #FFE84E;
+    border-radius: 40px;
+    border: none;
+    padding: 15px 30px;
+    margin: auto;
+    cursor: pointer;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.hero-section{
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.hero-section .landing-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0%;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hero-section h1 {
+    font-size: 7rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 15rem;
+    margin-left: 6rem;
+
+}
+.hero-section h2 {
+    font-size: 3rem;
+    font-weight: 500;
+    color: #ffffff;
+    margin-top: 3rem;
+    margin-left: 6rem;
+}
+.hero-section h2 span {
+    color: #FFE84E;
+}
+.description {
+    font-size: 2rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin-top: 3rem;
+    margin-left: 6rem;
+    width: 50%;
+}
+.hero-section .actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 3rem;
+    margin-left: 10rem;
+}
+.hero-section .action-contact {
+    background-color: #009EE2;
+    color: #ffffff;
+    padding: 01rem 3rem;
+    border-radius: 5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+}
+.hero-section .action-appelez {
+    background-color: #06CEAF;
+    color: #ffffff;
+    padding: 1rem 3rem;
+    border-radius: 5rem;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+}
+
+.about-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5rem 5rem;
+    margin-top: 10rem;
+    gap: 10rem;
+}
+
+.about-section .text-section{
+    flex: 1;
+    padding-right: 2rem;
+    max-width: 600rem;
+}
+h3 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #009EE2;;
+}
+.underline {
+    width: 10rem;
+    height: 0.5rem;
+    background-color: #009EE2;
+    margin-top: 1rem;
+}
+.description-text {
+    font-size: 1.5rem;
+    color: #333;
+    line-height: 2;
+    margin-top: 4rem;
+    width: 60rem;
+}
+.about-section .image-section {
+    width: 100%;
+}
+
+.separator{
+    width: 100%;
+    height: 4rem;
+    flex-shrink: 0;
+    background: #009EE2;
+    box-shadow: 0 4px 14px 8px rgba(111, 111, 111, 0.40);
+}
+.separator .separator-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.separator .technologies {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+.separator .technology {
+    text-align: center;
+}
+.mission-section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5rem 5rem;
+    margin-top: 5rem;
+    gap: 7rem;
 }
