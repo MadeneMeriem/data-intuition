@@ -7,14 +7,15 @@ const Mission = () => {
             <img src={MissionImage} alt="Mission" className="mission-image" />
         </div>
         <div className="text-section">
-            <h3>Notre Mission</h3>
+           <div className="title">
+             <h3>Notre Mission</h3>
             <div className="underline"></div>
+           </div>
             <p className="description-text">
                 Notre mission est de fournir des solutions IT qui propulsent la croissance et l’efficacité de nos clients.
                 Nous visons à devenir votre partenaire de confiance en développant des stratégies sur mesure qui répondent aux besoins spécifiques de votre entreprise.
             </p>
         </div>
-
     </div> );
 }
  
