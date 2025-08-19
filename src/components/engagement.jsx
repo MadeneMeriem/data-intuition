@@ -28,8 +28,11 @@ const Engagement = () => {
                 <div className="engagement-cards">
                     {engCards.map((card, index) => (
                         <div className="engagement-card" key={index}>
+                          <div className="line-aligner">
+                              <div className="horizline"></div>
                             <img src={card.picture} alt={card.title} className="engagement-icon" />
-                            <h4>{card.title}</h4>
+                          </div>
+                             <h4>{card.title}</h4>
                             <p className='card-text'>{card.content}</p>
                         </div>
                     ))}
