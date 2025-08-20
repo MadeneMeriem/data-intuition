@@ -305,13 +305,17 @@ h3 {
     width: 100%;
 }
 
+.vertical-line {
+    width: 30rem;                    
+    background-color: rgb(255, 255, 255);
+    border-radius: 3rem;
+}
 
 /* ================= LEFT SIDE ================== */
 .text-section-1 {
     flex: none;
     padding-right: 5rem;
-    border-right: 2px solid rgba(255, 255, 255, 0.3);
-    height: 30rem;
+    
 }
 
 .text-section-1 h3 {
@@ -411,3 +415,4 @@ h3 {
         padding-left: 0;
     }
 }
+

@@ -26,6 +26,7 @@ const Whyus = () => {
                 Nous sommes une entreprise fondée et dirigée par une équipe d’experts en technologies de l’information possédant une vaste expérience dans ce domaine. Nous avons relevé les défis stratégiques et tactiques auxquels sont confrontées diverses organisations commerciales à travers le monde.
             </p>
            </div>
+           <div className="vertical-line"></div>
            <div className="text-section-2">
             <p className="description-text">
                 Nos processus métier et nos services IT offrent des bénéfices mesurables à nos clients grâce à un plan d’affaires simple, basé sur des engagements fermes : 
