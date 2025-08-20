@@ -395,186 +395,6 @@ h3 {
 }
 /* Realisation Component Styles */
 .realisation {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 60px 20px;
-  position: relative;
-}
-
-/* Title Section */
-.realisation .title {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-.realisation .title h3 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 16px;
-  line-height: 1.2;
-}
-
-.realisation .title .underline {
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #3b82f6, #06b6d4);
-  margin: 0 auto;
-  border-radius: 2px;
-}
-
-/* Cards Container - Changed to horizontal flex layout */
-.realisation-cards {
-  display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  padding: 20px 0;
-  margin: 0 -10px;
-}
-
-/* Individual Card Styling - Removed display none, made cards side by side */
-.realisation-cards .div {
-  flex: 0 0 350px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  padding: 30px;
-  text-align: center;
-  scroll-snap-align: start;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin: 0 10px;
-}
-
-.realisation-cards .div:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-/* Card Image */
-.realisation-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 20px;
-  transition: transform 0.3s ease;
-}
-
-.realisation-img:hover {
-  transform: scale(1.02);
-}
-
-/* Card Title */
-.realisation-cards h4 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1f2937;
-  margin-bottom: 12px;
-  line-height: 1.3;
-}
-
-/* Card Text */
-.card_text {
-  font-size: 0.95rem;
-  color: #6b7280;
-  line-height: 1.6;
-}
-
-/* Removed navigation controls since all cards are visible */
-
-/* Custom Scrollbar for horizontal scroll */
-.realisation-cards::-webkit-scrollbar {
-  height: 8px;
-}
-
-.realisation-cards::-webkit-scrollbar-track {
-  background: #f1f5f9;
-  border-radius: 4px;
-  margin: 0 20px;
-}
-
-.realisation-cards::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 4px;
-}
-
-.realisation-cards::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .realisation {
-    padding: 40px 15px;
-  }
-
-  .realisation .title h3 {
-    font-size: 2rem;
-  }
-
-  /* Adjusted card size for mobile */
-  .realisation-cards .div {
-    flex: 0 0 280px;
-    padding: 25px;
-  }
-
-  .realisation-img {
-    height: 160px;
-  }
-
-  .realisation-cards h4 {
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .realisation .title h3 {
-    font-size: 1.8rem;
-  }
-
-  /* Smaller cards for very small screens */
-  .realisation-cards .div {
-    flex: 0 0 250px;
-    padding: 20px;
-  }
-
-  .realisation-img {
-    height: 140px;
-  }
-
-  .realisation-cards h4 {
-    font-size: 1.2rem;
-  }
-
-  .card_text {
-    font-size: 0.9rem;
-  }
-}
-
-/* Added smooth scroll behavior */
-.realisation-cards {
-  scroll-behavior: smooth;
-}
-
-/* Added fade-in animation for cards */
-.realisation-cards .div {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-/* Realisation Component Styles */
-.realisation {
   max-width: 1400px; /* Increased max-width for horizontal layout */
   margin: 0 auto;
   padding: 60px 20px;
@@ -642,7 +462,7 @@ h3 {
 /* Card Image - Enhanced with modern styling */
 .realisation-img {
   width: 100%;
-  height: 280px; /* Increased height for bigger cards */
+  height: 100ù; /* Increased height for bigger cards */
   object-fit: cover;
   border-radius: 20px; /* More rounded corners */
   margin-bottom: 32px; /* Increased spacing */
@@ -719,6 +539,29 @@ h3 {
   }
 }
 
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
 /* Responsive Design - Adjusted for horizontal layout */
 @media (max-width: 768px) {
   .realisation {
@@ -741,7 +584,7 @@ h3 {
   }
 
   .realisation-img {
-    height: 220px;
+    height: 100%;
     border-radius: 16px;
     margin-bottom: 24px;
   }
@@ -812,5 +655,3 @@ h3 {
         padding-left: 0;
     }
 }
-
-
