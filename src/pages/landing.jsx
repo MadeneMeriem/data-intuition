@@ -5,6 +5,7 @@ import Separator from '../components/separator';
 import Mission from '../components/mission';
 import Engagement from '../components/engagement';
 import Whyus from '../components/why-us';
+import Realisation from '../components/realisation';
 
 
 const Landing = () => {
@@ -16,6 +17,8 @@ const Landing = () => {
             <Mission />
             <Engagement/>
             <Whyus />
+            <Realisation/>
+
         </div>
      );
 }
