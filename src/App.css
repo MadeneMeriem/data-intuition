@@ -223,118 +223,402 @@ nav.is-scrolled {
 
 /* ================= HERO ================= */
 
-.hero-section{
-    position: relative;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
+.hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
-.hero-section .landing-bg{
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 0%;
-    align-items: center;
-    background-size: cover;
-    background-position: center;
-    height: 100%;
-    width: 100%;
-    z-index: -1;
+.hero-section .landing-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0%;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  /* Added smooth zoom animation for background */
+  animation: backgroundZoom 20s ease-in-out infinite alternate;
+}
+
+/* Added background zoom animation */
+@keyframes backgroundZoom {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
 }
 
 .hero-section h1 {
-    font-size: 7rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-top: 15rem;
-    margin-left: 6rem;
+  font-size: 7rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 15rem;
+  margin-left: 6rem;
+  /* Added fade in and slide up animation */
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+}
 
-}
 .hero-section h2 {
-    font-size: 3rem;
-    font-weight: 500;
-    color: #ffffff;
-    margin-top: 3rem;
-    margin-left: 6rem;
+  font-size: 3rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-top: 3rem;
+  margin-left: 6rem;
+  /* Added fade in and slide up animation with delay */
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s ease-out 1s forwards;
 }
+
 .hero-section h2 span {
-    color: #FFE84E;
+  color: #ffe84e;
+  /* Added text glow animation */
+  animation: textGlow 2s ease-in-out infinite alternate;
 }
+
+/* Added text glow animation for highlighted text */
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 10px rgba(255, 232, 78, 0.5);
+  }
+  100% {
+    text-shadow: 0 0 20px rgba(255, 232, 78, 0.8), 0 0 30px rgba(255, 232, 78, 0.6);
+  }
+}
+
 .description {
-    font-size: 2rem;
-    font-weight: 400;
-    color: #ffffff;
-    margin-top: 3rem;
-    margin-left: 6rem;
-    width: 50%;
+  font-size: 2rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-top: 3rem;
+  margin-left: 6rem;
+  width: 50%;
+  /* Added fade in animation with delay */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out 1.5s forwards;
 }
+
 .hero-section .actions {
-    display: flex;
-    gap: 1rem;
-    margin-top: 3rem;
-    margin-left: 10rem;
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  margin-left: 10rem;
+  /* Added fade in animation for buttons */
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out 2s forwards;
 }
+
 .hero-section .action-contact {
-    background-color: #009EE2;
-    color: #ffffff;
-    padding: 01rem 3rem;
-    border-radius: 5rem;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
+  background-color: #009ee2;
+  color: #ffffff;
+  padding: 1rem 3rem;
+  border-radius: 5rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  /* Added smooth transitions and hover effects */
+  transition: all 0.3s ease;
+  transform: translateY(0);
 }
+
+.hero-section .action-contact:hover {
+  /* Added hover animation */
+  background-color: #007bb8;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 158, 226, 0.3);
+}
+
 .hero-section .action-appelez {
-    background-color: #06CEAF;
-    color: #ffffff;
-    padding: 1rem 3rem;
-    border-radius: 5rem;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
+  background-color: #06ceaf;
+  color: #ffffff;
+  padding: 1rem 3rem;
+  border-radius: 5rem;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  /* Added smooth transitions and hover effects */
+  transition: all 0.3s ease;
+  transform: translateY(0);
 }
+
+.hero-section .action-appelez:hover {
+  /* Added hover animation */
+  background-color: #05b89a;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(6, 206, 175, 0.3);
+}
+
+/* Added main fade in animation keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Added responsive design for tablets */
+@media (max-width: 1024px) {
+  .hero-section h1 {
+    font-size: 5rem;
+    margin-top: 12rem;
+    margin-left: 4rem;
+  }
+
+  .hero-section h2 {
+    font-size: 2.5rem;
+    margin-left: 4rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+    margin-left: 4rem;
+    width: 60%;
+  }
+
+  .hero-section .actions {
+    margin-left: 4rem;
+  }
+}
+
+/* Added responsive design for mobile devices */
+@media (max-width: 768px) {
+  .hero-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2rem;
+  }
+
+  .hero-section h1 {
+    font-size: 3.5rem;
+    margin-top: 0;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .hero-section h2 {
+    font-size: 2rem;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 1.2rem;
+    margin-left: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-section .actions {
+    margin-left: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero-section .action-contact,
+  .hero-section .action-appelez {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Added responsive design for small mobile devices */
+@media (max-width: 480px) {
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .hero-section .actions {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-section .action-contact,
+  .hero-section .action-appelez {
+    width: 200px;
+    text-align: center;
+  }
+}
+
+
 
 /* ================= ABOUT ================= */
 
+/* Added smooth entrance animations and hover effects */
 .about-section {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 5rem 5rem;
-    margin-top: 10rem;
-    gap: 10rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 3rem 2rem;
+  margin-top: 5rem;
+  gap: 3rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  /* Added animation properties */
+  opacity: 0;
+  animation: fadeInUp 1s ease-out 0.2s forwards;
 }
 
-.about-section .text-section{
-    flex: 1;
-    padding-right: 2rem;
-    max-width: 600rem;
+/* Added slide-in animation for text section */
+.about-section .text-section {
+  flex: 1;
+  padding-right: 2rem;
+  max-width: 700px;
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: slideInLeft 0.8s ease-out 0.4s forwards;
 }
+
+/* Added glow animation for heading */
 h3 {
-    font-size: 4rem;
-    font-weight: 700;
-    color: #009EE2;;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #009ee2;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out 0.6s forwards;
+  transition: text-shadow 0.3s ease;
 }
+
+h3:hover {
+  text-shadow: 0 0 20px rgba(0, 158, 226, 0.3);
+}
+
+/* Added underline growth animation */
 .underline {
-    width: 10rem;
-    height: 0.5rem;
-    background-color: #009EE2;
-    margin-top: 1rem;
+  width: 4rem;
+  height: 0.3rem;
+  background-color: #009ee2;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: growWidth 0.8s ease-out 0.8s forwards;
 }
+
+/* Added fade-in animation for description */
 .description-text {
-    font-size: 1.5rem;
-    color: #333;
-    line-height: 2;
-    margin-top: 4rem;
-    width: 60rem;
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  width: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out 1s forwards;
 }
+
+/* Added slide-in animation for image section */
 .about-section .image-section {
-    width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: translateX(50px);
+  animation: slideInRight 0.8s ease-out 0.6s forwards;
 }
+
+/* Added hover effect for image */
+.about-section .image-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-section .image-section img:hover {
+  transform: scale(1.02);
+}
+
+/* Added keyframe animations */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes growWidth {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Updated responsive design with animations */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+
+  .about-section .text-section {
+    padding-right: 0;
+    max-width: none;
+    text-align: center;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+  }
+
+  .about-section .image-section {
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out 0.6s forwards;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  .description-text {
+    font-size: 1rem;
+  }
+}
+
+
 
 .separator{
     width: 100%;
@@ -378,33 +662,38 @@ h3 {
 
 
 .engagement-section {
-    display: flex;
-    flex-direction: column;
-    max-width: 600rem;
-    align-items: center;
-    justify-content: center;
+display: flex;
+flex-direction: column;
+max-width: 600rem;
+align-items: center;
+justify-content: center;
 }
 
+.engagement-section .description-text{
+  align-items: center;
+  padding  : 1rem 15rem;
+}
 .engagement-section .bold-text{
-    font-weight: 600;
-    color: #000;
-    font-size: 1.3rem;
-    margin-top: 2rem;
+font-weight: 600;
+color: #000;
+font-size: 1.3rem;
+margin-top: 2rem;
 }
 
 
 .engagement-section .engagement-cards{
-    display: flex;
-    flex-direction: row;
-    gap: 10rem;
-    justify-content: center;
-    margin: 5rem;
-    width: 80rem;
+      display: flex;
+      gap: 2rem;
+      flex-direction: row;
+      gap: 10rem;
+      justify-content: center;
+      margin: 5rem;
+      width: 80rem;
 }
 .engagement-section .engagement-cards .engagement-icon{
-    width: 7rem;
-    height: 7rem;
-    margin-bottom: 1rem;
+width: 7rem;
+height: 7rem;
+margin-bottom: 1rem;
 }
 
 .engagement-section .engagement-cards .card-text {
@@ -575,12 +864,6 @@ h3 {
   margin: 0 auto;
   padding: 60px 20px;
   position: relative;
-}
-
-/* Title Section */
-.realisation .title {
-  text-align: center;
-  margin-bottom: 50px;
 }
 
 

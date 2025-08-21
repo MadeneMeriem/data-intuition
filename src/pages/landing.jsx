@@ -18,7 +18,7 @@ const Landing = () => {
              <Hero 
                 title="Data Intuition"
                 subtitle={<><span>Innovation</span> et <span>Expertise</span> pour un Monde Digital</>}
-                description="Nous vous accompagnons dans la transformation digitale..."
+                description="Nous vous accompagnons dans  transformation digitale en concevant des produits et services intelligents, performants et centrés sur l'utilisateur."
                 background={Landing_bg}
                 button1Text="Contactez-nous"
                 button2Text="Appelez-nous"
