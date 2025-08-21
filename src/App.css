@@ -16,51 +16,212 @@ body {
 
 }
 
-nav{
-    display : flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 90px;
-    gap: 24px;
-    margin-left: 30px;
-    margin-right: 30px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-    background-color: transparent;
+/* ================= NAV ================= */
+:root {
+  --primary: #009EE2;
+  --accent: #FFE84E;
 }
-.nav-bar-container{
-    display: none;
-}
-.nav-links{
-    display: flex;
-    gap: 5rem;
-    align-items: center;
-}
-.nav-links  a{
-    text-decoration: none;
-    color: #000;
-    font-size: 1.1rem;
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  gap: 24px;
+  padding: 0 30px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: transparent;
+  transition: background 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
 }
+
+/* Add .is-scrolled via JS when page scrolls */
+nav.is-scrolled {
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  backdrop-filter: blur(6px);
+}
+
 .data-intuition-logo {
-    width: 150px;
-    height: 50px;
-    display: flex;
-    padding: 1rem 2rem;
-    margin-top: 4rem;
+  display: inline-flex;
+  align-items: center;
+  width: 150px;
+  height: 50px;
 }
-.contact-button button {
-    background-color: #FFE84E;
-    border-radius: 40px;
-    border: none;
-    padding: 15px 30px;
-    margin: auto;
-    cursor: pointer;
 
+/* Desktop nav links */
+.nav-links {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
 }
+
+.nav-links a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  color: var(--primary);
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a:focus-visible::after {
+  width: 100%;
+}
+
+/* Contact/CTA button shown in nav */
+.contact-button button,
+.contact-button a {
+  background-color: var(--accent);
+  border-radius: 40px;
+  border: none;
+  padding: 12px 22px;
+  cursor: pointer;
+  font-weight: 600;
+  color: #000;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.contact-button button:hover,
+.contact-button button:focus-visible,
+.contact-button a:hover,
+.contact-button a:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.10);
+}
+
+/* Hamburger container (hidden on desktop) */
+.nav-bar-container {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: rgba(255,255,255,0.8);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.nav-bar-container:hover,
+.nav-bar-container:focus-visible {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
+}
+
+/* Optional hamburger icon lines (if built with spans) */
+.nav-bar-container .line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #111;
+  border-radius: 2px;
+  position: relative;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.nav-bar-container .line::before,
+.nav-bar-container .line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 22px;
+  height: 2px;
+  background: #111;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.nav-bar-container .line::before { top: -7px; }
+.nav-bar-container .line::after { top: 7px; }
+
+/* When menu is open, animate the hamburger into an X (toggle .is-open on the button) */
+.nav-bar-container.is-open .line {
+  transform: rotate(45deg);
+}
+.nav-bar-container.is-open .line::before {
+  transform: rotate(-90deg) translateX(-7px);
+  opacity: 0;
+}
+.nav-bar-container.is-open .line::after {
+  transform: rotate(-90deg);
+  top: 0;
+}
+
+/* ============ Mobile styles ============ */
+@media (max-width: 768px) {
+  /* Show hamburger, hide desktop layout by default */
+  .nav-bar-container { display: inline-flex; }
+
+  /* Turn .nav-links into a dropdown panel */
+  .nav-links {
+    position: fixed;
+    top: 90px;      /* below the fixed nav */
+    right: 0;
+    left: 0;
+    background: rgba(255,255,255,0.98);
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.2rem 1.2rem 2rem;
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.08);
+  }
+
+  /* Toggle this class via JS to open the mobile menu */
+  .nav-links.is-open {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* Reduce link spacing on mobile */
+  .nav-links a { font-size: 1rem; }
+
+  /* Keep CTA inside the dropdown on mobile (optional) */
+  .contact-button { width: 100%; display: flex; justify-content: center; }
+  .contact-button a,
+  .contact-button button { width: 100%; max-width: 320px; }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  nav,
+  .nav-links,
+  .nav-links a::after,
+  .nav-bar-container,
+  .nav-bar-container .line,
+  .contact-button button,
+  .contact-button a {
+    transition: none !important;
+  }
+}
+
+/* ================= HERO ================= */
 
 .hero-section{
     position: relative;
@@ -123,6 +284,7 @@ nav{
     font-weight: 600;
     font-size: 1rem;
     border: none;
+    cursor: pointer;
 }
 .hero-section .action-appelez {
     background-color: #06CEAF;
@@ -133,7 +295,10 @@ nav{
     font-weight: 600;
     font-size: 1rem;
     border: none;
+    cursor: pointer;
 }
+
+/* ================= ABOUT ================= */
 
 .about-section {
     display: flex;
@@ -196,6 +361,10 @@ h3 {
 .separator .technology {
     text-align: center;
 }
+
+
+/* ================= MISSION ================= */
+
 .mission-section {
     display: flex;
     flex-direction: row;
@@ -204,6 +373,9 @@ h3 {
     margin-top: 5rem;
     gap: 7rem;
 }
+
+/* ================= Engagement ================= */
+
 
 .engagement-section {
     display: flex;
@@ -306,8 +478,8 @@ h3 {
 }
 
 .vertical-line{
-    width: 30rem;                    
-    background-color: rgb(255, 255, 255);
+    width: 0.1rem;                    
+    background-color: rgb(173, 173, 173);
     border-radius: 3rem;
     z-index: 1; 
 }
@@ -393,6 +565,10 @@ h3 {
     color: #FFE84E;
     font-size: 1.6rem !important;
 }
+
+
+/* ================= Realisation ================= */
+
 /* Realisation Component Styles */
 .realisation {
   max-width: 1400px; /* Increased max-width for horizontal layout */
@@ -407,21 +583,7 @@ h3 {
   margin-bottom: 50px;
 }
 
-.realisation .title h3 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 16px;
-  line-height: 1.2;
-}
 
-.realisation .title .underline {
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(90deg, #3b82f6, #06b6d4);
-  margin: 0 auto;
-  border-radius: 2px;
-}
 
 /* Cards Container - Changed to horizontal flex layout with smooth horizontal scroll */
 .realisation-cards {
@@ -562,6 +724,98 @@ h3 {
 }
 
 
+
+/* ================= OurClients ================== */
+
+/* Our Clients Section */
+.our-clients {
+  padding:5rem 5rem;
+  background-color: #ffffff;
+  overflow: hidden;
+  align-items: center;
+}
+
+
+.description-text {
+  font-size: 1.5rem;
+  color: #000000;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+/* Horizontal Scrolling Container */
+.clients-logos {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  width: max-content;   /* make sure container is only as wide as its content */
+  animation: scroll-horizontal 20s linear infinite;
+}
+
+/* Individual Client Cards */
+.client-card {
+  flex-shrink: 0;
+  width: 30rem;
+  height: 10rem;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.client-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: #d1d5db;
+}
+
+.client-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: filter 4s ease;
+}
+
+/* Infinite Scroll Animation */
+@keyframes scroll-horizontal {
+  100% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.clients-logos:hover {
+  animation-play-state: paused;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .client-card {
+    width: 140px;
+    height: 100px;
+    padding: 15px;
+  }
+  
+  .clients-logos {
+    gap: 30px;
+    animation-duration: 100s;
+  }
+  
+  .title h3 {
+    font-size: 2rem;
+  }
+}
+
+
 /* Responsive Design - Adjusted for horizontal layout */
 @media (max-width: 768px) {
   .realisation {
@@ -631,7 +885,6 @@ h3 {
     font-size: 0.95rem;
   }
 }
-
 
 /* ================= RESPONSIVE ================== */
 @media (max-width: 1024px) {

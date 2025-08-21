@@ -6,18 +6,35 @@ import Mission from '../components/mission';
 import Engagement from '../components/engagement';
 import Whyus from '../components/why-us';
 import Realisation from '../components/realisation';
+import AboutImage from "../assets/apropos.png";
+import Landing_bg from "../assets/landing-bg.png";
+import OurClients from '../components/ourclients';
+
 
 
 const Landing = () => {
     return ( 
         <div className="landing-page">
-            <Hero />
-            <About/>
+             <Hero 
+                title="Data Intuition"
+                subtitle={<><span>Innovation</span> et <span>Expertise</span> pour un Monde Digital</>}
+                description="Nous vous accompagnons dans la transformation digitale..."
+                background={Landing_bg}
+                button1Text="Contactez-nous"
+                button2Text="Appelez-nous"
+                />
+            <About 
+                title="A propos de Nous"
+                description="Chez Data Intuition, nous sommes dédiés à transformer vos idées en solutions numériques innovantes. Fondée par une équipe d'experts en technologies de l'information, notre entreprise combine expertise, innovation et engagement pour offrir des services de qualité supérieure."
+                image={AboutImage}
+                alt="A propos de Nous"
+                 />
             <Separator />
             <Mission />
             <Engagement/>
             <Whyus />
             <Realisation/>
+            <OurClients/>
 
         </div>
      );

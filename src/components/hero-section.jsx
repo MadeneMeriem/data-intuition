@@ -1,33 +1,33 @@
-import React from 'react';
-import Landing from '../assets/landing-bg.png';
-import Call from '../assets/call-us.svg';
+import React from "react";
 
+const Hero = ({ 
+  title, 
+  subtitle, 
+  description, 
+  background, 
+  button1Text, 
+  button2Text 
+}) => {
+  return ( 
+    <div className="hero-section">
+      {background && (
+        <img src={background} alt="Landing Background" className="landing-bg" />
+      )}
 
+      {title && <h1>{title}</h1>}
 
+      {subtitle && <h2>{subtitle}</h2>}
 
-const Hero = () => {
-    return ( 
-       <div className="hero-section">
-            <img src={Landing} alt="Landing Background" className="landing-bg" />
-            <h1>
-                Data Intuition
-            </h1>
-            <h2>
-                <span>Innovation</span> et <span>Expertise</span> pour un Monde Digital
-            </h2>
-            <p className="description">
-                Nous vous accompagnons dans  transformation digitale en concevant des produits et services intelligents, performants et centrés sur l'utilisateur.
-            </p>
-            <div className="actions">
-                <button className="action-contact">Contactez-nous</button>
-                <button className="action-appelez">Appelez-nous</button>
-            </div>
-            <div className="call">
-                <img src="" alt="" />
-            </div>
-            
-       </div>
-     );
-}
- 
+      {description && <p className="description">{description}</p>}
+
+      {(button1Text || button2Text) && (
+        <div className="actions">
+          {button1Text && <button className="action-contact">{button1Text}</button>}
+          {button2Text && <button className="action-appelez">{button2Text}</button>}
+        </div>
+      )}
+    </div>
+  );
+};
+
 export default Hero;
