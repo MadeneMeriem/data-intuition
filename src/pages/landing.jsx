@@ -10,6 +10,7 @@ import AboutImage from "../assets/apropos.png";
 import Landing_bg from "../assets/landing-bg.png";
 import OurClients from '../components/ourclients';
 import Contact from '../components/contact';
+import Message from '../components/sendmessage';
 
 
 
@@ -37,6 +38,7 @@ const Landing = () => {
             <Realisation/>
             <OurClients/>
             <Contact/>
+            <Message/>
 
         </div>
      );
