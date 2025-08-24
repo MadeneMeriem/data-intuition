@@ -1306,6 +1306,70 @@ margin-bottom: 1rem;
   background: #ffd900;
 }
 
+/* ================= Footer ================== */
+
+
+.footer {
+  background: #009ee2;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  font-size: 0.95rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 1rem;
+}
+
+.footer-icon {
+  font-size: 1.1rem;
+  color: #fff;
+}
+
+.footer-center {
+  text-align: center;
+  flex: 1;
+}
+
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer span,
+.footer p {
+  margin: 0;
+}
+
+/* Responsive styles */
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-right {
+    align-items: center;
+  }
+
+  .footer-item {
+    justify-content: center;
+  }
+}
+
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -1434,4 +1498,50 @@ margin-bottom: 1rem;
     .text-section-2 {
         padding-left: 0;
     }
+}
+/* =====================
+   Responsive Styles
+===================== */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .names,
+  .contacts {
+    flex-direction: column;
+  }
+
+  .names input,
+  .contacts input {
+    width: 100%;
+  }
+
+  .message {
+    padding: 1.5rem;
+  }
+
+  .message .title h3 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .message {
+    margin: 2rem 1rem;
+    padding: 1.2rem;
+  }
+
+  .message .title h3 {
+    font-size: 1.5rem;
+  }
+
+  .message-text textarea {
+    height: 12rem;
+  }
+
+  .contact-button button {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+  }
 }
