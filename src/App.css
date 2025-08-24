@@ -1098,6 +1098,155 @@ margin-bottom: 1rem;
   }
 }
 
+.contact-us {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 10rem auto;
+  padding: 3rem 2rem;
+}
+
+.contact-info {
+  padding-top: 7rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.contact-info .title h3 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #009ee2;
+  margin-bottom: 0.5rem;
+}
+
+.contact-info .underline {
+  width: 60px;
+  height: 4px;
+  background: #009ee2;
+  margin: 0 0 2rem 0;
+}
+
+.contact-info .description-text {
+  color: #666;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+/* Contact Links */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  margin-bottom: 2.5rem;
+}
+
+.contact-links h5 {
+  font-size: 1.1rem;
+  color: #009ee2;
+  font-weight: 600;
+  margin: 0;
+}
+
+.contact-links p {
+  margin-left: 2.2rem;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.line-aligner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Social Section */
+.folow-us h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: #333;
+}
+
+.folow-us .facebok,
+.folow-us .linedin {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.folow-us img {
+  width: 24px;
+  height: 24px;
+}
+
+.folow-us a {
+  color: #444;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.folow-us a:hover {
+  color: #009ee2;
+}
+
+/* Map Section */
+.map {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.map img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .contact-us {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .contact-info .title h3 {
+    font-size: 1.8rem;
+  }
+
+  .map {
+    margin-top: 0;
+  }
+
+  .map img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-us {
+    padding: 1.5rem 1rem;
+  }
+
+  .contact-info .title h3 {
+    font-size: 1.6rem;
+  }
+
+  .contact-links {
+    gap: 1.5rem;
+  }
+}
+
 
 /* Responsive Design - Adjusted for horizontal layout */
 @media (max-width: 768px) {

@@ -9,6 +9,7 @@ import Realisation from '../components/realisation';
 import AboutImage from "../assets/apropos.png";
 import Landing_bg from "../assets/landing-bg.png";
 import OurClients from '../components/ourclients';
+import Contact from '../components/contact';
 
 
 
@@ -35,6 +36,7 @@ const Landing = () => {
             <Whyus />
             <Realisation/>
             <OurClients/>
+            <Contact/>
 
         </div>
      );
